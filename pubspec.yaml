@@ -37,6 +37,9 @@ dependencies:
   camera: ^0.9.4+10
   path_provider:
   path:
+  cropperx: ^1.0.0
+  opencv_4: ^1.0.0
+
 
 dev_dependencies:
   flutter_test:

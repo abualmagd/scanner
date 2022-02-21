@@ -152,13 +152,13 @@ class _CapturePageState extends State<CapturePage> {
                                 CircleAvatar(
                                   radius: 25.0,
                                   backgroundColor: Colors.blueAccent,
-                                 /* backgroundImage: FileImage(
+                                  /* backgroundImage: FileImage(
                                       File(images![images!.length - 1])),*/
-                                  child:CircleAvatar(
+                                  child: CircleAvatar(
                                     radius: 22,
                                     backgroundImage: FileImage(
                                         File(images![images!.length - 1])),
-                                  ) ,
+                                  ),
                                 ),
                                 Positioned(
                                   child: CircleAvatar(
@@ -166,9 +166,8 @@ class _CapturePageState extends State<CapturePage> {
                                     backgroundColor: Colors.red,
                                     child: Text(images!.length.toString()),
                                   ),
-                                  right:0,
+                                  right: 0,
                                   top: 0,
-
                                 ),
                               ],
                             )
@@ -193,11 +192,11 @@ class _CapturePageState extends State<CapturePage> {
           } else {
             var image = await _controller!.takePicture();
             images!.add(image.path);
-            setState(() {
-
-            });
-            print('******************[][][][]*******');
-            print(images!.length);
+            setState(() {});
+            if (kDebugMode) {
+              print('******************[][][][]*******');
+              print(images!.length);
+            }
           }
 
           //taking image here
