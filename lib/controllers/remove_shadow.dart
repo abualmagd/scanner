@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+
 import 'package:opencv_4/opencv_4.dart';
 import 'dart:io';
 
@@ -8,26 +8,6 @@ class ImageEdit {
     //path
     var path = file.path;
 
-/*
-    //blur image
-    var img = await Cv2.blur(pathString: path,
-        kernelSize: [45, 45],
-        anchorPoint: [20, 30],
-        borderType: Cv2.BORDER_DEFAULT);
-
-    //th1 cv threshold
-    var th1 = await Cv2.threshold(pathString: path,
-        thresholdValue: 127,
-        maxThresholdValue: 255,
-        thresholdType: Cv2.THRESH_BINARY);
-    //adaptive threshold
-    var th2 = await Cv2.adaptiveThreshold(pathString: path,
-        maxValue: 255,
-        adaptiveMethod: Cv2.ADAPTIVE_THRESH_MEAN_C,
-        thresholdType: Cv2.THRESH_BINARY,
-        blockSize: 11,
-        constantValue: 2);
-*/
     //th3 the best to remove image remove
     var th3 = await Cv2.adaptiveThreshold(pathString: path,
         maxValue: 255,
@@ -35,6 +15,7 @@ class ImageEdit {
         thresholdType: Cv2.THRESH_BINARY,
         blockSize: 11,
         constantValue: 2);
+    return th3;
   }
 
   otsuRemoveShadow(File file) async{
@@ -50,6 +31,7 @@ class ImageEdit {
         thresholdValue:0,
         maxThresholdValue:255,
         thresholdType:Cv2.THRESH_BINARY+Cv2.THRESH_OTSU);
+    return otsu;
   }
 
 }

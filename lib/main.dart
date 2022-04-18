@@ -6,6 +6,7 @@ import 'package:scanner/views/crop.dart';
 import 'package:scanner/views/file.dart';
 import 'package:scanner/views/filter.dart';
 import 'package:scanner/views/home.dart';
+import 'package:scanner/views/rich_my_image.dart';
 
 List<CameraDescription>? cameras;
 
@@ -37,6 +38,7 @@ class MyApp extends StatelessWidget {
         '/crop': (context) => const CropPage(),
         '/filter': (context) => const FilterPage(),
         '/file': (context) => const FilePage(),
+        '/filters':(context)=>const RichMyImage(),
       },
      /* theme: ThemeData(
         colorScheme: const ColorScheme(

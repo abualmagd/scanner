@@ -1,5 +1,5 @@
-import 'dart:io';
 
+import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
@@ -39,6 +39,7 @@ class _CapturePageState extends State<CapturePage> {
     });
     super.initState();
   }
+
 
   @override
   Widget build(BuildContext context) {
